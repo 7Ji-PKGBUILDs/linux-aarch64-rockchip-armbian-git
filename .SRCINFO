@@ -1,4 +1,4 @@
-pkgbase = linux-aarch64-rockchip-edge-git
+pkgbase = linux-aarch64-rockchip-armbian-git
 	pkgver = 6.8.1.r66.3639be.2e818e
 	pkgrel = 1
 	url = https://kernel.org
@@ -22,13 +22,13 @@ pkgbase = linux-aarch64-rockchip-edge-git
 	sha512sums = SKIP
 	sha512sums = 5491e2c4d69b37a8fc8761e128cef89b3406754850c71486e86f7bdba5daf855574e191b2f4d75c654a80eff33ea5249efc9ad6a97d9805cee9e5a80ed93c302
 
-pkgname = linux-aarch64-rockchip-edge-git
+pkgname = linux-aarch64-rockchip-armbian-git
 	pkgdesc = The linux kernel, with patches picked from armbian on RK3588
 	depends = coreutils
 	depends = kmod
 	depends = initramfs
 	optdepends = wireless-regdb: to set the correct wireless channels of your country
 
-pkgname = linux-aarch64-rockchip-edge-git-headers
+pkgname = linux-aarch64-rockchip-armbian-git-headers
 	pkgdesc = Headers and scripts for building modules for the Linux kernel, with patches picked from armbian on RK3588
 	depends = python

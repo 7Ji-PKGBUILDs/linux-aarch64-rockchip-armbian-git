@@ -2,7 +2,7 @@
 # Maintainer: Jat-faan Wong
 # Contributor: Jat-faan Wong 
 
-pkgbase=linux-aarch64-rockchip-edge-git
+pkgbase=linux-aarch64-rockchip-armbian-git
 pkgname=("${pkgbase}"{,-headers})
 _pkgver=6.8.1
 pkgver=${_pkgver}.r66.3639be.2e818e
