@@ -4,8 +4,8 @@
 
 pkgbase=linux-aarch64-rockchip-armbian-git
 pkgname=("${pkgbase}"{,-headers})
-_pkgver=6.8.1
-pkgver=${_pkgver}.r66.3639be.2e818e
+_pkgver=6.8.3
+pkgver=6.8.3.r82.0b0384.c8abbd
 pkgrel=1
 arch=('aarch64')
 license=('GPL2')
@@ -23,7 +23,7 @@ source=(
 )
 
 sha512sums=(
-  'a08c966b4c3cce22fa4963b2b17b42966ceb959ccb0280f83a67fa84abed773ec5e155df7678df121c7825772a9ba82df71fa142734754d3847e73b7e65488f7'
+  'SKIP'
   'SKIP'
   '5491e2c4d69b37a8fc8761e128cef89b3406754850c71486e86f7bdba5daf855574e191b2f4d75c654a80eff33ea5249efc9ad6a97d9805cee9e5a80ed93c302'
 )
