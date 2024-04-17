@@ -1,5 +1,5 @@
 pkgbase = linux-aarch64-rockchip-armbian-git
-	pkgver = 6.8.3.r82.0b0384.c8abbd
+	pkgver = 6.8.6.r86.0b0384.734967
 	pkgrel = 1
 	url = https://kernel.org
 	arch = aarch64
@@ -15,7 +15,7 @@ pkgbase = linux-aarch64-rockchip-armbian-git
 	makedepends = vboot-utils
 	makedepends = dtc
 	options = !strip
-	source = https://mirrors.tuna.tsinghua.edu.cn/kernel/v6.x/linux-6.8.3.tar.gz
+	source = https://mirrors.tuna.tsinghua.edu.cn/kernel/v6.x/linux-6.8.6.tar.gz
 	source = git+https://github.com/armbian/build.git
 	source = custom_reconfig
 	sha512sums = SKIP
