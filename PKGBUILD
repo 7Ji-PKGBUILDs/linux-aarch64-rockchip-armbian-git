@@ -4,7 +4,6 @@
 
 pkgbase=linux-aarch64-rockchip-armbian-git
 pkgname=("${pkgbase}"{,-headers})
-_pkgver=6.8.7
 pkgver=6.8.7.r86.0b0384.734967
 pkgrel=1
 arch=('aarch64')
@@ -13,11 +12,11 @@ url="https://kernel.org"
 _desc="with patches picked from armbian on RK3588" 
 makedepends=('cpio' 'xmlto' 'docbook-xsl' 'kmod' 'inetutils' 'bc' 'git' 'uboot-tools' 'vboot-utils' 'dtc')
 options=('!strip')
-_srcname=linux-${_pkgver}
+_srcname=linux-stable
 _buildname='build'
 
 source=(
-  "https://mirrors.tuna.tsinghua.edu.cn/kernel/v6.x/${_srcname}.tar.gz"
+  "git+https://mirrors.tuna.tsinghua.edu.cn/git/${_srcname}.git#branch=linux-rolling-stable"
   "git+https://github.com/armbian/${_buildname}.git"
   'custom_reconfig'
 )
