@@ -4,8 +4,8 @@
 
 pkgbase=linux-aarch64-rockchip-armbian-git
 pkgname=("${pkgbase}"{,-headers})
-_pkgver=6.8.6
-pkgver=6.8.6.r86.0b0384.734967
+_pkgver=6.8.7
+pkgver=6.8.7.r86.0b0384.734967
 pkgrel=1
 arch=('aarch64')
 license=('GPL2')
