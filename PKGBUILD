@@ -16,7 +16,7 @@ _srcname=linux-stable
 _buildname='build'
 
 source=(
-  "git+https://mirrors.tuna.tsinghua.edu.cn/git/${_srcname}.git#branch=linux-rolling-stable"
+  "${_srcname}::git+https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git#branch=linux-rolling-stable"
   "git+https://github.com/armbian/${_buildname}.git"
   'custom_reconfig'
 )

@@ -15,7 +15,7 @@ pkgbase = linux-aarch64-rockchip-armbian-git
 	makedepends = vboot-utils
 	makedepends = dtc
 	options = !strip
-	source = git+https://mirrors.tuna.tsinghua.edu.cn/git/linux-stable.git#branch=linux-rolling-stable
+	source = linux-stable::git+https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git#branch=linux-rolling-stable
 	source = git+https://github.com/armbian/build.git
 	source = custom_reconfig
 	sha512sums = SKIP
