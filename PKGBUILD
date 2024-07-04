@@ -4,7 +4,7 @@
 
 pkgbase=linux-aarch64-rockchip-armbian-git
 pkgname=("${pkgbase}"{,-headers})
-pkgver=6.8.7.r86.0b0384.734967
+pkgver=6.10.0.rc6.r18.a422ac.088d3b
 pkgrel=1
 arch=('aarch64')
 license=('GPL2')
@@ -16,7 +16,7 @@ _srcname=linux-stable
 _buildname='build'
 
 source=(
-  "${_srcname}::git+https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git#branch=linux-rolling-stable"
+  "${_srcname}::git+https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git#branch=master"
   "git+https://github.com/armbian/${_buildname}.git"
   'custom_reconfig'
 )
@@ -27,8 +27,8 @@ sha512sums=(
   '5491e2c4d69b37a8fc8761e128cef89b3406754850c71486e86f7bdba5daf855574e191b2f4d75c654a80eff33ea5249efc9ad6a97d9805cee9e5a80ed93c302'
 )
 
-_config=config/kernel/linux-rockchip-rk3588-edge.config
-_patch=patch/kernel/rockchip-rk3588-edge
+_config=config/kernel/linux-rockchip-rk3588-6.10.config
+_patch=patch/kernel/archive/rockchip-rk3588-6.10
 
 prepare() {
 
@@ -56,6 +56,18 @@ prepare() {
     patch -p1 -N -i $p || true
   done
 
+  # add custom dt and overlay
+  echo "Copying custom dt ..."
+  cp -rv ../${_buildname}/${_patch}/dt/*.dts arch/arm64/boot/dts/rockchip
+  echo "Copying custom overlay ..."
+  cp -rv ../${_buildname}/${_patch}/overlay arch/arm64/boot/dts/rockchip/overlay
+
+  # append newly added dts to Makefile
+  for p in ../${_buildname}/${_patch}/dt/*.dts; do
+    echo "Adding $(basename $p) to Makefile"
+    echo "dtb-\$(CONFIG_ARCH_ROCKCHIP) += $(basename $p)" >> arch/arm64/boot/dts/rockchip/Makefile
+  done
+
   echo "Preparing config..."
   cat ../${_buildname}/${_config} > .config
   scripts/kconfig/merge_config.sh -m .config ../custom_reconfig
@@ -67,11 +79,19 @@ prepare() {
 
 pkgver() {
   cd "${_srcname}"
-  printf '%s.%s.%s.%s' \
-    "$(make kernelversion)" \
-    "$(<localversion.10-release-total)" \
-    "$(<localversion.20-id-config)" \
-    "$(<localversion.30-id-patch)"
+  local major_minor_patch=$(make kernelversion)
+  local release_total=$(< localversion.10-release-total)
+  local id_config=$(< localversion.20-id-config)
+  local id_patch=$(< localversion.30-id-patch)
+
+  # Remove unsupported characters from the version components
+  major_minor_patch="${major_minor_patch//[-\/:\ ]/.}"
+  release_total="${release_total//[-\/:\ ]/.}"
+  id_config="${id_config//[-\/:\ ]/.}"
+  id_patch="${id_patch//[-\/:\ ]/.}"
+
+  # Construct the final version string
+  printf '%s.%s.%s.%s' "$major_minor_patch" "$release_total" "$id_config" "$id_patch"
 }
 
 build() {
