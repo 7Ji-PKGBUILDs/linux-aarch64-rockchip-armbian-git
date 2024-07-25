@@ -4,7 +4,7 @@
 
 pkgbase=linux-aarch64-rockchip-armbian-git
 pkgname=("${pkgbase}"{,-headers})
-pkgver=6.10.0.rc6.r18.a422ac.088d3b
+pkgver=6.10.1
 pkgrel=1
 arch=('aarch64')
 license=('GPL2')
@@ -16,7 +16,7 @@ _srcname=linux-stable
 _buildname='build'
 
 source=(
-  "${_srcname}::git+https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git#branch=master"
+  "${_srcname}::git+https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git#branch=linux-6.10.y"
   "git+https://github.com/armbian/${_buildname}.git"
   'custom_reconfig'
 )
