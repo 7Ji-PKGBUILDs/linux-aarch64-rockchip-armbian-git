@@ -4,7 +4,7 @@
 
 pkgbase=linux-aarch64-rockchip-armbian-git
 pkgname=("${pkgbase}"{,-headers})
-pkgver=6.13.1
+pkgver=6.12.17
 pkgrel=1
 arch=('aarch64')
 license=('GPL2')
@@ -16,7 +16,7 @@ _srcname=linux-stable
 _buildname='build'
 
 source=(
-  "${_srcname}::git+https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git#branch=linux-6.13.y"
+  "${_srcname}::git+https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git#branch=linux-6.12.y"
   "git+https://github.com/armbian/${_buildname}.git"
   'custom_reconfig'
 )
@@ -27,8 +27,8 @@ sha512sums=(
   '5491e2c4d69b37a8fc8761e128cef89b3406754850c71486e86f7bdba5daf855574e191b2f4d75c654a80eff33ea5249efc9ad6a97d9805cee9e5a80ed93c302'
 )
 
-_config=config/kernel/linux-rockchip64-edge.config
-_patch=patch/kernel/archive/rockchip64-6.13
+_config=config/kernel/linux-rockchip64-current.config
+_patch=patch/kernel/archive/rockchip64-6.12
 
 prepare() {
 
