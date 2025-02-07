@@ -1,5 +1,5 @@
 pkgbase = linux-aarch64-rockchip-armbian-git
-	pkgver = 6.10.1
+	pkgver = 6.13.1
 	pkgrel = 1
 	url = https://kernel.org
 	arch = aarch64
@@ -15,7 +15,7 @@ pkgbase = linux-aarch64-rockchip-armbian-git
 	makedepends = vboot-utils
 	makedepends = dtc
 	options = !strip
-	source = linux-stable::git+https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git#branch=linux-6.10.y
+	source = linux-stable::git+https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git#branch=linux-6.13.y
 	source = git+https://github.com/armbian/build.git
 	source = custom_reconfig
 	sha512sums = SKIP
@@ -23,12 +23,12 @@ pkgbase = linux-aarch64-rockchip-armbian-git
 	sha512sums = 5491e2c4d69b37a8fc8761e128cef89b3406754850c71486e86f7bdba5daf855574e191b2f4d75c654a80eff33ea5249efc9ad6a97d9805cee9e5a80ed93c302
 
 pkgname = linux-aarch64-rockchip-armbian-git
-	pkgdesc = The linux kernel, with patches picked from armbian on RK3588
+	pkgdesc = The linux kernel, with patches picked from armbian for Rockchip
 	depends = coreutils
 	depends = kmod
 	depends = initramfs
 	optdepends = wireless-regdb: to set the correct wireless channels of your country
 
 pkgname = linux-aarch64-rockchip-armbian-git-headers
-	pkgdesc = Headers and scripts for building modules for the Linux kernel, with patches picked from armbian on RK3588
+	pkgdesc = Headers and scripts for building modules for the Linux kernel, with patches picked from armbian for Rockchip
 	depends = python

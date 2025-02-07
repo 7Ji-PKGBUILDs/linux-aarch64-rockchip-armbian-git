@@ -1,22 +1,22 @@
 # AArch64 multi-platform
-# Maintainer: Jat-faan Wong
-# Contributor: Jat-faan Wong 
+# Maintainer: Samuel (kwankiu)
+# Contributor: Jat-faan Wong, Guoxin "7Ji" Pu, Joshua-Riek
 
 pkgbase=linux-aarch64-rockchip-armbian-git
 pkgname=("${pkgbase}"{,-headers})
-pkgver=6.10.1
+pkgver=6.13.1
 pkgrel=1
 arch=('aarch64')
 license=('GPL2')
 url="https://kernel.org"
-_desc="with patches picked from armbian on RK3588" 
+_desc="with patches picked from armbian for Rockchip"
 makedepends=('cpio' 'xmlto' 'docbook-xsl' 'kmod' 'inetutils' 'bc' 'git' 'uboot-tools' 'vboot-utils' 'dtc')
 options=('!strip')
 _srcname=linux-stable
 _buildname='build'
 
 source=(
-  "${_srcname}::git+https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git#branch=linux-6.10.y"
+  "${_srcname}::git+https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git#branch=linux-6.13.y"
   "git+https://github.com/armbian/${_buildname}.git"
   'custom_reconfig'
 )
@@ -27,8 +27,8 @@ sha512sums=(
   '5491e2c4d69b37a8fc8761e128cef89b3406754850c71486e86f7bdba5daf855574e191b2f4d75c654a80eff33ea5249efc9ad6a97d9805cee9e5a80ed93c302'
 )
 
-_config=config/kernel/linux-rockchip-rk3588-6.10.config
-_patch=patch/kernel/archive/rockchip-rk3588-6.10
+_config=config/kernel/linux-rockchip64-edge.config
+_patch=patch/kernel/archive/rockchip64-6.13
 
 prepare() {
 
