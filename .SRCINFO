@@ -1,5 +1,5 @@
 pkgbase = linux-aarch64-rockchip-armbian-git
-	pkgver = 6.12.17
+	pkgver = 6.14.rc6
 	pkgrel = 1
 	url = https://kernel.org
 	arch = aarch64
@@ -15,7 +15,7 @@ pkgbase = linux-aarch64-rockchip-armbian-git
 	makedepends = vboot-utils
 	makedepends = dtc
 	options = !strip
-	source = linux-stable::git+https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git#branch=linux-6.12.y
+	source = linux-stable::git+https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git#branch=master
 	source = git+https://github.com/armbian/build.git
 	source = custom_reconfig
 	sha512sums = SKIP
