@@ -18,13 +18,13 @@ _buildname='build'
 source=(
   "${_srcname}::git+https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git#branch=master"
   "git+https://github.com/armbian/${_buildname}.git"
-  'custom_reconfig'
+  'local.config'
 )
 
 sha512sums=(
   'SKIP'
   'SKIP'
-  '5491e2c4d69b37a8fc8761e128cef89b3406754850c71486e86f7bdba5daf855574e191b2f4d75c654a80eff33ea5249efc9ad6a97d9805cee9e5a80ed93c302'
+  '9ec050e491788b8428395fc28b6d8486d64d314d8b85e97d8df30a35bd7b85d2ed84682e7b2eaed7b471b73aa51119e360761a099719eed9952713e0caba17ce'
 )
 
 _config=config/kernel/linux-rockchip64-edge.config
@@ -70,7 +70,7 @@ prepare() {
 
   echo "Preparing config..."
   cat ../${_buildname}/${_config} > .config
-  scripts/kconfig/merge_config.sh -m .config ../custom_reconfig
+  scripts/kconfig/merge_config.sh -m .config ../local.config
   make olddefconfig prepare
 
   make -s kernelrelease > version
