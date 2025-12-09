@@ -1,6 +1,6 @@
 pkgbase = linux-aarch64-rockchip-armbian-git
-	pkgver = 6.18.rc8
-	pkgrel = 1
+	pkgver = 6.18
+	pkgrel = 3
 	url = https://kernel.org
 	arch = aarch64
 	license = GPL2
@@ -15,7 +15,7 @@ pkgbase = linux-aarch64-rockchip-armbian-git
 	makedepends = vboot-utils
 	makedepends = dtc
 	options = !strip
-	source = linux-stable::git+https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git#branch=master
+	source = https://git.kernel.org/torvalds/t/${_srcname}.tar.gz
 	source = git+https://github.com/armbian/build.git
 	source = local.config
 	sha512sums = SKIP

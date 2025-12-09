@@ -4,19 +4,21 @@
 
 pkgbase=linux-aarch64-rockchip-armbian-git
 pkgname=("${pkgbase}"{,-headers})
-pkgver=6.18.rc8
-pkgrel=1
+_pkgver=6.18
+pkgrel=3
+pkgver=${_pkgver}
 arch=('aarch64')
 license=('GPL2')
 url="https://kernel.org"
 _desc="with patches picked from armbian for Rockchip"
 makedepends=('cpio' 'xmlto' 'docbook-xsl' 'kmod' 'inetutils' 'bc' 'git' 'uboot-tools' 'vboot-utils' 'dtc')
 options=('!strip')
-_srcname=linux-stable
 _buildname='build'
+_srcname=linux-${_pkgver}
 
 source=(
-  "${_srcname}::git+https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git#branch=master"
+  #"${_srcname}::git+https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git#branch=master"
+  "https://git.kernel.org/torvalds/t/${_srcname}.tar.gz"
   "git+https://github.com/armbian/${_buildname}.git"
   'local.config'
 )
