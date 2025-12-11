@@ -30,7 +30,7 @@ sha512sums=(
 )
 
 _config=config/kernel/linux-rockchip64-edge.config
-_patch=patch/kernel/archive/rockchip64-6.18
+_patch=patch/kernel/archive/rockchip64-${_pkgver}
 
 prepare() {
 
