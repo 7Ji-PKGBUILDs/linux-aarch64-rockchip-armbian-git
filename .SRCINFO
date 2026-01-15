@@ -1,6 +1,6 @@
 pkgbase = linux-aarch64-rockchip-armbian-git
-	pkgver = 6.18
-	pkgrel = 3
+	pkgver = 6.19.rc5
+	pkgrel = 1
 	url = https://kernel.org
 	arch = aarch64
 	license = GPL2

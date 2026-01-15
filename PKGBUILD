@@ -4,9 +4,9 @@
 
 pkgbase=linux-aarch64-rockchip-armbian-git
 pkgname=("${pkgbase}"{,-headers})
-_pkgver=6.18
-pkgrel=3
-pkgver=${_pkgver}
+_pkgver=6.19-rc5
+pkgrel=1
+pkgver=${_pkgver//-/.}
 arch=('aarch64')
 license=('GPL2')
 url="https://kernel.org"
@@ -30,7 +30,7 @@ sha512sums=(
 )
 
 _config=config/kernel/linux-rockchip64-edge.config
-_patch=patch/kernel/archive/rockchip64-${_pkgver}
+_patch=patch/kernel/archive/rockchip64-${_pkgver%%-*}
 
 prepare() {
 
